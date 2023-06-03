@@ -13,28 +13,36 @@ void main() {
           GoRoute(
             path: '/',
             name: HomeScreen.routeName,
-            builder: (BuildContext context, GoRouterState state) {
-              return const HomeScreen();
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _defaultPageBuilder(
+                child: const HomeScreen(),
+              );
             },
           ),
           GoRoute(
             path: '/screen1',
             name: Screen1.routeName,
-            builder: (BuildContext context, GoRouterState state) {
-              return const Screen1();
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _defaultPageBuilder(
+                child: const Screen1(),
+              );
             },
           ),
           GoRoute(
             path: '/screen2',
             name: Screen2.routeName,
-            builder: (BuildContext context, GoRouterState state) {
-              return const Screen2();
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _defaultPageBuilder(
+                child: const Screen2(),
+              );
             },
           ),
         ],
-        builder: (BuildContext context, GoRouterState state, Widget child) {
-          return Shell(
-            child: child,
+        pageBuilder: (BuildContext context, GoRouterState state, Widget child) {
+          return _defaultPageBuilder(
+            child: Shell(
+              child: child,
+            ),
           );
         },
       ),
@@ -44,4 +52,12 @@ void main() {
   runApp(App(
     router: router,
   ));
+}
+
+CustomTransitionPage _defaultPageBuilder({
+  required Widget child,
+}) {
+  return NoTransitionPage(
+    child: child,
+  );
 }

@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 # Only works with v2
-      - uses: subosito/flutter-action@v1
-        flutter-version: '3.10.2'
-        channel: 'stable'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.2'
+          channel: 'stable'
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
           baseHref: /new/

@@ -18,7 +18,7 @@ jobs:
           channel: 'stable'
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
-          baseHref: /new/
+          baseHref: /portfolio5/
 
 #      - name: Generate your content
 #        run: echo "Optional placeholder. Put your project's static website generator command here."

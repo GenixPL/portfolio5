@@ -24,7 +24,7 @@ jobs:
       - name: run dart
         run: dart lib/config.dart
 
-#      - name: Generate your content
+#      - name: Generate your conten
 #        run: echo "Optional placeholder. Put your project's static website generator command here."
 #
 #      - name: Publish current workdir (which contains generated content) to GitHub Pages

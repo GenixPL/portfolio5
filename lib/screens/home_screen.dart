@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:portfolio5/config.dart';
 import 'package:portfolio5/widgets/_widgets.dart';
 
@@ -15,12 +16,22 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ContentContainer(
+    return ContentContainer(
       style: ContentContainerStyle.centeredWithBottomFooter,
-      footer: Footer(),
+      footer: const Footer(),
       contents: <Widget>[
-        Text(testString),
-        Text('Home'),
+        GestureDetector(
+          child: const Text('send'),
+          onTap: () {
+            http.post(
+              Uri.parse('https://dupaa.free.beeceptor.com'),
+              headers: {
+                'auth': testString,
+              },
+            ).then((value) => print(value.body));
+          },
+        ),
+        const Text('Home'),
       ],
     );
   }

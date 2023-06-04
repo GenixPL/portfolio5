@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio5/widgets/_widgets.dart';
 
 class HomeScreenUriFactory {
   const HomeScreenUriFactory();
@@ -13,15 +14,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Home',
-          ),
-        ],
-      ),
+    return const ContentContainer(
+      style: ContentContainerStyle.centeredWithBottomFooter,
+      footer: Footer(),
+      contents: <Widget>[
+        Text('Home'),
+      ],
     );
   }
 }

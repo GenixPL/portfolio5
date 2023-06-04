@@ -16,6 +16,12 @@ jobs:
         with:
           flutter-version: '3.10.2'
           channel: 'stable'
+
+      - name: decrypt
+        run: gpg --passphrase="$PASSPHRASE" lib/config.dart.gpg
+        env:
+          PASSPHRASE: ${{secrets.CONFIG_PASSPHRASE}}
+
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
           baseHref: /portfolio5/

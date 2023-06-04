@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     super.key,
   });
 
-  static const String routeName = 'home';
+  static const String path = '/';
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ class Screen2 extends StatelessWidget {
     super.key,
   });
 
-  static const String routeName = 'screen2';
+  static const String path = '/screen2';
 
   @override
   Widget build(BuildContext context) {

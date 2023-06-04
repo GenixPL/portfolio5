@@ -4,9 +4,11 @@ import 'package:portfolio5/widgets/_widgets.dart';
 class Shell extends StatelessWidget {
   const Shell({
     super.key,
+    required this.currentRouteName,
     required this.child,
   });
 
+  final String currentRouteName;
   final Widget child;
 
   @override
@@ -14,7 +16,9 @@ class Shell extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const TopBar(),
+          TopBar(
+            currentRouteName: currentRouteName,
+          ),
           Expanded(
             child: child,
           ),

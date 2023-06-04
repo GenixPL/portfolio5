@@ -1,11 +1,10 @@
 # Publishes web director by putting it inside the recognisable `docs` folder.
-name: Publish to Github Pages
+name: Test passphrase
 
 on:
   push:
     branches:
-      # NOTE: You may want to limit the trigger branch to be "main" or "master" etc.
-      - 'release'
+      - 'main'
 
 jobs:
   publish:
@@ -18,13 +17,12 @@ jobs:
           channel: 'stable'
 
       - name: decrypt
-        run: gpg --passphrase="$PASSPHRASE" lib/config.dart.gpg
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output lib/config.dart lib/config.dart.gpg
         env:
           PASSPHRASE: ${{secrets.CONFIG_PASSPHRASE}}
 
-      - uses: erickzanardo/flutter-gh-pages@v7
-        with:
-          baseHref: /portfolio5/
+      - name: run dart
+        run: dart lib/config.dart
 
 #      - name: Generate your content
 #        run: echo "Optional placeholder. Put your project's static website generator command here."

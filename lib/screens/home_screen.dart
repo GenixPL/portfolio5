@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio5/config.dart';
 import 'package:portfolio5/widgets/_widgets.dart';
 
 class HomeScreenUriFactory {
@@ -18,6 +19,7 @@ class HomeScreen extends StatelessWidget {
       style: ContentContainerStyle.centeredWithBottomFooter,
       footer: Footer(),
       contents: <Widget>[
+        Text(testString),
         Text('Home'),
       ],
     );

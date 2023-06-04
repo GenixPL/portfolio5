@@ -18,7 +18,7 @@ jobs:
           channel: 'stable'
 
       - name: decrypt
-        run: gpg --passphrase="$PASSPHRASE" lib/config.dart.gpg
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output lib/config.dart lib/config.dart.gpg
         env:
           PASSPHRASE: ${{secrets.CONFIG_PASSPHRASE}}
 

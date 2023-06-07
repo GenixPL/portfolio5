@@ -3,7 +3,7 @@ enum FontFamily {
   kontanter,
   prime;
 
-  String assetName() {
+  String get assetName {
     return switch (this) {
       cpMono => 'CPMono',
       kontanter => 'Kontanter',

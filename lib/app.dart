@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio5/styles/_styles.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -12,10 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-        brightness: Brightness.dark,
-      ),
+      theme: themeData,
       routerConfig: router,
     );
   }

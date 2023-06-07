@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:portfolio5/config.dart';
 import 'package:portfolio5/widgets/_widgets.dart';
 
 class HomeScreenUriFactory {
@@ -16,22 +14,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ContentContainer(
+    return const ContentContainer(
       style: ContentContainerStyle.centeredWithBottomFooter,
-      footer: const Footer(),
+      footer: Footer(),
       contents: <Widget>[
-        GestureDetector(
-          child: const Text('send'),
-          onTap: () {
-            http.post(
-              Uri.parse('https://dupaa.free.beeceptor.com'),
-              headers: {
-                'auth': testString,
-              },
-            ).then((value) => print(value.body));
-          },
-        ),
-        const Text('Home'),
+        Text('Home'),
       ],
     );
   }

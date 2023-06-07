@@ -3,7 +3,8 @@ name: Test passphrase
 on:
   push:
     branches:
-      - 'main'
+      # put random stuff to block
+      - 'skdjhfksdfhsldkflsd'
 
 jobs:
   publish:
@@ -11,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
 
+      # encrypt with: gpg --symmetric --cipher-algo AES256 lib/config.dart
       - name: decrypt
         run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output lib/config.dart lib/config.dart.gpg
         env:

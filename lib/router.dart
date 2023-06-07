@@ -16,18 +16,26 @@ final GoRouter router = GoRouter(
           },
         ),
         GoRoute(
-          path: Screen1.path,
+          path: PortfolioScreen.path,
           pageBuilder: (BuildContext context, GoRouterState state) {
             return _defaultPageBuilder(
-              child: const Screen1(),
+              child: const PortfolioScreen(),
             );
           },
         ),
         GoRoute(
-          path: Screen2.path,
+          path: AboutScreen.path,
           pageBuilder: (BuildContext context, GoRouterState state) {
             return _defaultPageBuilder(
-              child: const Screen2(),
+              child: const AboutScreen(),
+            );
+          },
+        ),
+        GoRoute(
+          path: ContactScreen.path,
+          pageBuilder: (BuildContext context, GoRouterState state) {
+            return _defaultPageBuilder(
+              child: const ContactScreen(),
             );
           },
         ),

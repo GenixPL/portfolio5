@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio5/screens/_screens.dart';
+import 'package:portfolio5/styles/_styles.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({
@@ -18,20 +19,46 @@ class TopBar extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            _Button(
-              currentRouteName: currentRouteName,
-              text: 'home',
-              path: HomeScreen.path,
+            TextButton(
+              onPressed: () => context.go(HomeScreen.path),
+              child: Row(
+                children: [
+                  Text(
+                    '|_|0|_|\n|_|_|0|\n|0|0|0|',
+                    style: TextStyle(
+                      height: 1.25,
+                      fontFamily: FontFamily.cpMono.assetName(),
+                      fontSize: 12.0,
+                    ),
+                  ),
+                  const SizedBox(width: 12.0),
+                  Text(
+                    // Letters' sizes are strange due to the font.
+                    'łN',
+                    style: TextStyle(
+                      height: 1.25,
+                      fontFamily: FontFamily.kontanter.assetName(),
+                      fontSize: 28.0,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            _Button(
+            const Spacer(),
+            _SectionButton(
               currentRouteName: currentRouteName,
-              text: '1',
-              path: Screen1.path,
+              text: 'Portfolio',
+              path: PortfolioScreen.path,
             ),
-            _Button(
+            _SectionButton(
               currentRouteName: currentRouteName,
-              text: '2',
-              path: Screen2.path,
+              text: 'About',
+              path: AboutScreen.path,
+            ),
+            _SectionButton(
+              currentRouteName: currentRouteName,
+              text: 'Contact',
+              path: ContactScreen.path,
             ),
           ],
         ),
@@ -40,8 +67,8 @@ class TopBar extends StatelessWidget {
   }
 }
 
-class _Button extends StatelessWidget {
-  const _Button({
+class _SectionButton extends StatelessWidget {
+  const _SectionButton({
     required this.currentRouteName,
     required this.text,
     required this.path,
@@ -53,17 +80,17 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isActive = path == currentRouteName;
+
     return TextButton(
-      onPressed: () {
-        context.go(path);
-      },
+      onPressed: () => context.go(path),
       child: Text(
-        text,
-        style: path == currentRouteName
-            ? const TextStyle(
-                fontWeight: FontWeight.w900,
-              )
-            : null,
+        text.toUpperCase(),
+        style: TextStyle(
+          fontWeight: isActive ? FontWeight.w900 : null,
+          fontFamily: FontFamily.cpMono.assetName(),
+          fontSize: isActive ? 20.0 : 14.0,
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+export 'about_screen.dart';
+export 'contact_screen.dart';
 export 'home_screen.dart';
-export 'screen_1.dart';
-export 'screen_2.dart';
+export 'portfolio_screen.dart';

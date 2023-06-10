@@ -13,19 +13,25 @@ class PortfolioScreen extends StatelessWidget {
         style: ContentContainerStyle.centeredWithBottomFooter,
         footer: const Footer(),
         contents: <Widget>[
-          const Text('portfolio'),
           Container(
-            color: Colors.amber,
-            height: 300,
+            color: Colors.black,
+            child: const Text('articles'),
           ),
+          const SizedBox(height: 24.0),
           Container(
-            color: Colors.redAccent,
-            height: 400,
+            color: Colors.black,
+            child: const Text('algorithms'),
           ),
-          // Container(
-          //   color: Colors.blueAccent,
-          //   height: 400,
-          // ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
+            child: const Text('apps'),
+          ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
+            child: const Text('hackathons'),
+          ),
         ],
       ),
     );

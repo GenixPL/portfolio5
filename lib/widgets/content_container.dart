@@ -13,6 +13,10 @@ class ContentContainer extends StatelessWidget {
     required this.contents,
   });
 
+  static const EdgeInsets _contentPadding = EdgeInsets.symmetric(
+    vertical: 8.0,
+  );
+
   final List<Widget> contents;
   final Widget? footer;
   final ContentContainerStyle style;
@@ -42,8 +46,11 @@ class ContentContainer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         const SizedBox(),
-        Column(
-          children: contents,
+        Padding(
+          padding: _contentPadding,
+          child: Column(
+            children: contents,
+          ),
         ),
         footer ?? const SizedBox(),
       ],
@@ -54,8 +61,11 @@ class ContentContainer extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Column(
-          children: contents,
+        Padding(
+          padding: _contentPadding,
+          child: Column(
+            children: contents,
+          ),
         ),
         footer ?? const SizedBox(),
       ],

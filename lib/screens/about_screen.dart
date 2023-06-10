@@ -13,19 +13,35 @@ class AboutScreen extends StatelessWidget {
         style: ContentContainerStyle.centeredWithBottomFooter,
         footer: const Footer(),
         contents: <Widget>[
-          const Text('about'),
           Container(
-            color: Colors.amber,
-            height: 300,
+            color: Colors.black,
+            child: const Text('frameworks'),
           ),
+          const SizedBox(height: 24.0),
           Container(
-            color: Colors.redAccent,
-            height: 400,
+            color: Colors.black,
+            child: const Text('languages (coding)'),
           ),
-          // Container(
-          //   color: Colors.blueAccent,
-          //   height: 400,
-          // ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
+            child: const Text('languages (human)'),
+          ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
+            child: const Text('uni'),
+          ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
+            child: const Text('location'),
+          ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
+            child: const Text('hobbies'),
+          ),
         ],
       ),
     );

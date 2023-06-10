@@ -8,11 +8,24 @@ class ContactScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ContentContainer(
+    return ContentContainer(
       style: ContentContainerStyle.centeredWithBottomFooter,
-      footer: Footer(),
+      footer: const Footer(),
       contents: <Widget>[
-        Text('contact'),
+        Container(
+          color: Colors.black,
+          child: const Text('email'),
+        ),
+        const SizedBox(height: 24.0),
+        Container(
+          color: Colors.black,
+          child: const Text('fb'),
+        ),
+        const SizedBox(height: 24.0),
+        Container(
+          color: Colors.black,
+          child: const Text('in person'),
+        ),
       ],
     );
   }

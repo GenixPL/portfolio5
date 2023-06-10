@@ -55,7 +55,7 @@ final GoRouter router = GoRouter(
 CustomTransitionPage _defaultPageBuilder({
   required Widget child,
 }) {
-  return NoTransitionPage(
+  return NoTransitionPage<Widget>(
     child: child,
   );
 }

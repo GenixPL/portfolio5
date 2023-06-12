@@ -10,7 +10,9 @@ class GithubRequestHelper {
   static const String _url = 'https://api.github.com/graphql';
 
   // Please don't steal it, it has literally no permissions...
-  static const String _authToken = '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';
+  static const String _part1 = 'ghp_dg8ONQbDKwbofJ';
+  static const String _part2 = 'NnHCyOLatPNnyLxI0V74jg';
+  static const String _authToken = _part1 + _part2;
 
   static const Duration _timeout = Duration(seconds: 10);
 

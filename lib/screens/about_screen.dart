@@ -40,6 +40,11 @@ class AboutScreen extends StatelessWidget {
           const SizedBox(height: 24.0),
           Container(
             color: Colors.black,
+            child: const Text('courses'),
+          ),
+          const SizedBox(height: 24.0),
+          Container(
+            color: Colors.black,
             child: const Text('hobbies'),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio5/data/_data.dart';
+import 'package:portfolio5/widgets/_widgets.dart';
 import 'package:provider/provider.dart';
 
 class GithubStats extends StatelessWidget {
@@ -7,17 +8,22 @@ class GithubStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GithubContributionCalendarRaw? calendarRaw = context.watch<GithubStatsProvider>().calendarRaw;
+
     return Column(
       children: [
         TextButton(
           onPressed: () {
-            context.read<GithubStatsProvider>().fetch();
+            context.read<GithubStatsProvider>().optimisedFetch();
           },
           child: const Text('fetch'),
         ),
-        Text(
-          context.watch<GithubStatsProvider>().calendarRaw?.toString() ?? 'null',
-        ),
+        if (calendarRaw == null)
+          const Text('no data')
+        else
+          GithubContributionCalendarTable(
+            calendarRaw: calendarRaw,
+          ),
       ],
     );
   }

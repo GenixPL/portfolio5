@@ -27,15 +27,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24.0),
-        Container(
-          color: Colors.green,
-          child: const Center(
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: GithubStats(),
-            ),
-          ),
-        ),
+        const GithubStats(),
         const SizedBox(height: 24.0),
         Container(
           height: 500,

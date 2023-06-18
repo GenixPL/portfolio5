@@ -3,8 +3,8 @@ import 'package:portfolio5/data/_data.dart';
 import 'package:portfolio5/widgets/_widgets.dart';
 import 'package:provider/provider.dart';
 
-class GithubStats extends StatelessWidget {
-  const GithubStats({super.key});
+class GithubStatsWidget extends StatelessWidget {
+  const GithubStatsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

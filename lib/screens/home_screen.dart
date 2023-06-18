@@ -27,16 +27,9 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24.0),
-        const GithubStats(),
+        const GithubStatsWidget(),
         const SizedBox(height: 24.0),
-        Container(
-          height: 500,
-          width: 300,
-          color: Colors.yellow,
-          child: const Center(
-            child: Text('StackOverflow'),
-          ),
-        ),
+        const StackOverflowStatsWidget(),
         const SizedBox(height: 24.0),
         Container(
           height: 500,
@@ -52,7 +45,7 @@ class HomeScreen extends StatelessWidget {
           width: 300,
           color: Colors.grey,
           child: const Center(
-            child: Text('github waiting game'),
+            child: Text('google waiting game'),
           ),
         ),
       ],

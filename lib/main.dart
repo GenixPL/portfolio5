@@ -8,9 +8,8 @@ import 'app.dart';
 void main() {
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(
-        create: (_) => GithubStatsProvider(),
-      ),
+      ChangeNotifierProvider(create: (_) => GithubStatsProvider()),
+      ChangeNotifierProvider(create: (_) => StackOverflowStatsProvider()),
     ],
     child: App(
       router: router,

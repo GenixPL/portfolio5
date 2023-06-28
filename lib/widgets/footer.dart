@@ -21,10 +21,16 @@ class Footer extends StatelessWidget {
                 social: social,
               ),
             // TODO(genix): add
-            Text(
-              'CV',
-              style: TextStyle(
-                fontFamily: FontFamily.cpMono.assetName,
+            SizedBox(
+              height: 20.0,
+              width: 20.0,
+              child: Center(
+                child: Text(
+                  'CV',
+                  style: TextStyle(
+                    fontFamily: FontFamily.cpMono.assetName,
+                  ),
+                ),
               ),
             ),
           ],
@@ -59,13 +65,15 @@ class _SocialButtonState extends State<_SocialButton> {
         _hovered = hovered;
         setState(() {});
       },
-      child: SvgPicture.asset(
-        widget.social.icon.assetPath,
+      child: SizedBox(
         width: _SocialButton._size,
         height: _SocialButton._size,
-        colorFilter: ColorFilter.mode(
-          _hovered ? Colors.white : Colors.amber,
-          BlendMode.srcIn,
+        child: SvgPicture.asset(
+          widget.social.icon,
+          colorFilter: ColorFilter.mode(
+            _hovered ? Colors.white : Colors.amber,
+            BlendMode.srcIn,
+          ),
         ),
       ),
     );

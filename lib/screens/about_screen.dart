@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio5/styles/_styles.dart';
 import 'package:portfolio5/widgets/_widgets.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -9,8 +10,7 @@ class AboutScreen extends StatelessWidget {
 
   static const double _spaceSize = 64.0;
 
-  // TODO(genix): add sorting
-  // TODO(genix): add spotify
+  // TODO(genix): add sorting into groups
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +29,33 @@ class AboutScreen extends StatelessWidget {
             child: DetailedLanguages(),
           ),
           const SizedBox(height: _spaceSize),
-          Container(
-            color: Colors.black,
-            child: const Text('uni'),
+          _Section(
+            name: 'University',
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 160.0,
+                  width: 160.0,
+                  child: GestureDetector(
+                    onTap: () {
+                      launchUrlString('https://ww4.mini.pw.edu.pl');
+                    },
+                    child: Image.asset(
+                      OtherImages.miniPw,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24.0),
+                _text('Warsaw University of Technology'),
+                _text('Faculty of Mathematics and Information Science'),
+                const SizedBox(height: 16.0),
+                _text('Bachelor of Engineering in Computer Science (EN)'),
+                const SizedBox(height: 16.0),
+                _text('Sep 2016 - Feb 2020'),
+                _text('(3.5 year program)'),
+              ],
+            ),
           ),
           const SizedBox(height: _spaceSize),
           Container(
@@ -49,6 +73,16 @@ class AboutScreen extends StatelessWidget {
             child: const Text('hobbies'),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _text(String text) {
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontFamily: FontFamily.cpMono.assetName,
       ),
     );
   }

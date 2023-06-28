@@ -13,7 +13,25 @@ enum Technology {
   python,
   ts,
   js,
-  go;
+  go,
+  android,
+  flutter,
+  ios,
+  vue,
+  nativeScript,
+  firebase,
+  sql,
+  rest,
+  graphql,
+  grpc,
+  mqtt,
+  html,
+  css,
+  travis,
+  fastlane,
+  githubActions,
+  figma,
+  paint;
 
   static const String _logoBasePath = 'assets/icons/technologies';
 
@@ -34,6 +52,25 @@ enum Technology {
       ts => 'TypeScript',
       js => 'JavaScript 💩',
       go => 'Go',
+      android => 'Android',
+      flutter => 'Flutter',
+      ios => 'iOS',
+      vue => 'Vue',
+      nativeScript => 'NativeScript',
+      firebase => 'Firebase',
+      // Todo(genix): github?
+      sql => 'SQL',
+      rest => 'REST',
+      graphql => 'GraphQL',
+      grpc => 'gRPC',
+      mqtt => 'MQTT',
+      html => 'HTML',
+      css => 'CSS',
+      travis => 'Travis CI',
+      fastlane => 'fastlane',
+      githubActions => 'Github Actions',
+      figma => 'Figma',
+      paint => 'Paint',
     };
   }
 
@@ -54,6 +91,25 @@ enum Technology {
       ts => 'https://en.wikipedia.org/wiki/TypeScript',
       js => 'https://en.wikipedia.org/wiki/JavaScript',
       go => 'https://en.wikipedia.org/wiki/Go_(programming_language)',
+      android => 'https://en.wikipedia.org/wiki/Android_(operating_system)',
+      flutter => 'https://en.wikipedia.org/wiki/Flutter_(software)',
+      ios => 'https://en.wikipedia.org/wiki/IOS',
+      vue => 'https://en.wikipedia.org/wiki/Vue.js',
+      nativeScript => 'https://en.wikipedia.org/wiki/NativeScript',
+      firebase => 'https://en.wikipedia.org/wiki/Firebase',
+      // todo(genix): firestore
+      sql => 'https://en.wikipedia.org/wiki/SQL',
+      rest => 'https://en.wikipedia.org/wiki/Representational_state_transfer',
+      graphql => 'https://en.wikipedia.org/wiki/GraphQL',
+      grpc => 'https://en.wikipedia.org/wiki/GRPC',
+      mqtt => 'https://en.wikipedia.org/wiki/MQTT',
+      html => 'https://en.wikipedia.org/wiki/HTML',
+      css => 'https://en.wikipedia.org/wiki/CSS',
+      travis => 'https://en.wikipedia.org/wiki/Travis_CI',
+      fastlane => 'https://fastlane.tools',
+      githubActions => 'https://github.com/features/actions',
+      figma => 'https://en.wikipedia.org/wiki/Figma_(software)',
+      paint => 'https://en.wikipedia.org/wiki/Microsoft_Paint',
     };
   }
 
@@ -74,6 +130,24 @@ enum Technology {
       ts => 'ts',
       js => 'js',
       go => 'go',
+      android => 'android',
+      flutter => 'flutter',
+      ios => 'ios',
+      vue => 'vue',
+      nativeScript => 'nativescript',
+      firebase => 'firebase',
+      sql => 'sql',
+      rest => 'rest',
+      graphql => 'graphql',
+      grpc => 'grpc',
+      mqtt => 'mqtt',
+      html => 'html',
+      css => 'css',
+      travis => 'travis',
+      fastlane => 'fastlane',
+      githubActions => 'githubactions',
+      figma => 'figma',
+      paint => 'paint',
     };
     if (icon == null) {
       return null;
@@ -81,25 +155,4 @@ enum Technology {
 
     return '$_logoBasePath/$icon.svg';
   }
-}
-
-enum Framework {
-  flutter,
-  android,
-  ios,
-  vue,
-  nativeScript,
-  reactNative,
-  angular,
-  firebase,
-  sql,
-  rest,
-  graphql,
-  grpc,
-  mqtt,
-  html,
-  css,
-  travis,
-  fastlane,
-  figma,
 }

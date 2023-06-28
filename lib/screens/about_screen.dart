@@ -11,6 +11,7 @@ class AboutScreen extends StatelessWidget {
   static const double _spaceSize = 64.0;
 
   // TODO(genix): add sorting into groups
+  // TODO(genix): svgs into images
 
   @override
   Widget build(BuildContext context) {

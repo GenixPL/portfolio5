@@ -14,6 +14,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: getThemeData(),
+      title: 'Łukasz Niedziałek',
       routerConfig: router,
     );
   }

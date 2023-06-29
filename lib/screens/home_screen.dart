@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       style: ContentContainerStyle.topWithBottomFooter,
       footer: const Footer(),
       contents: <Widget>[
+        const Game(),
         Container(
           height: 500,
           width: 300,
@@ -40,14 +41,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24.0),
-        Container(
-          height: 500,
-          width: 300,
-          color: Colors.grey,
-          child: const Center(
-            child: Text('google waiting game'),
-          ),
-        ),
+
       ],
     );
   }

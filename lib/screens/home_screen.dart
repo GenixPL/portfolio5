@@ -18,15 +18,7 @@ class HomeScreen extends StatelessWidget {
       style: ContentContainerStyle.topWithBottomFooter,
       footer: const Footer(),
       contents: <Widget>[
-        const Game(),
-        Container(
-          height: 500,
-          width: 300,
-          color: Colors.transparent,
-          child: const Center(
-            child: Text('short bio'),
-          ),
-        ),
+        const Bio(),
         const SizedBox(height: 24.0),
         const GithubStatsWidget(),
         const SizedBox(height: 24.0),
@@ -41,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24.0),
-
+        const Game(),
       ],
     );
   }

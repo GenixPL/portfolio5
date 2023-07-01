@@ -1,3 +1,4 @@
+export 'bio/_bio.dart';
 export 'github/_github.dart';
 export 'languages/_languages.dart';
 export 'stack_overflow/_stack_overflow.dart';

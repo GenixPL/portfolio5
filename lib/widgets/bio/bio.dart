@@ -12,6 +12,7 @@ class Bio extends StatefulWidget {
   State<Bio> createState() => _BioState();
 }
 
+// TODO(genix): something throws
 class _BioState extends State<Bio> {
   Timer? _timer;
   int _ticks = 0;
@@ -20,7 +21,9 @@ class _BioState extends State<Bio> {
   void initState() {
     super.initState();
 
-    _startNextTimer();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _startNextTimer();
+    });
   }
 
   @override
@@ -40,8 +43,8 @@ class _BioState extends State<Bio> {
           _part1(),
           _part2(),
           _part3(),
-          Image.asset(OtherImages.photo),
-        ],
+          // Image.asset(OtherImages.photo),
+        ].withSpacing(48.0),
       ),
     );
   }
@@ -108,7 +111,7 @@ class _BioState extends State<Bio> {
         style: DefaultTextStyle.of(context).style,
         children: [
           TextSpan(
-            text: 'With over ',
+            text: 'TODO(genix): <Some nicely phrased bullshit about me having ',
             style: _basicStyle(
               isBig: false,
             ),
@@ -121,8 +124,7 @@ class _BioState extends State<Bio> {
             ),
           ),
           TextSpan(
-            text:
-                ' years of programming experience I have touched many technologies, although I remain faithful to mobile development with ',
+            text: ' years of programming experience and having touched many technologies with ',
             style: _basicStyle(
               isBig: false,
             ),
@@ -135,7 +137,14 @@ class _BioState extends State<Bio> {
             ),
           ),
           TextSpan(
-            text: ' being my main tool. ',
+            text: ' being the main one.>',
+            style: _basicStyle(
+              isBig: false,
+            ),
+          ),
+          const TextSpan(text: '\n\n'),
+          TextSpan(
+            text: 'TODODODO(🎺): <Some more of that stuff saying that ',
             style: _basicStyle(
               isBig: false,
             ),
@@ -148,7 +157,7 @@ class _BioState extends State<Bio> {
             ),
           ),
           TextSpan(
-            text: ' is my biggest passion and I\'m highly focused on delivering exceptional things I can be proud of.',
+            text: ' is my biggest passion and I\'m highly focused on delivering exceptional things I can be proud of.>',
             style: _basicStyle(
               isBig: false,
             ),
@@ -179,14 +188,23 @@ class _BioState extends State<Bio> {
   }
 
   void _startNextTimer() {
+    if (!mounted) {
+      return;
+    }
+
     _timer = Timer(const Duration(milliseconds: 400), _timerHandle);
   }
 
   void _timerHandle() {
+    if (!mounted) {
+      return;
+    }
+
     _ticks++;
     if (_ticks < 19) {
       _startNextTimer();
     }
+
     setState(() {});
   }
 }

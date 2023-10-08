@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 
 import 'app.dart';
 
+// TODO(genix): add "empty" language selection
+// TODO(genix): add displaying version
 void main() {
   runApp(MultiProvider(
     providers: [

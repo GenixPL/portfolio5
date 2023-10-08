@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio5/utils/_utils.dart';
 import 'package:portfolio5/widgets/_widgets.dart';
 
 class HomeScreenUriFactory {
@@ -10,6 +11,8 @@ class HomeScreen extends StatelessWidget {
     super.key,
   });
 
+  static const double _spacing = 64.0;
+
   static const String path = '/';
 
   @override
@@ -18,31 +21,16 @@ class HomeScreen extends StatelessWidget {
       style: ContentContainerStyle.topWithBottomFooter,
       footer: const Footer(),
       contents: <Widget>[
-        const Game(),
-        Container(
-          height: 500,
-          width: 300,
-          color: Colors.transparent,
-          child: const Center(
-            child: Text('short bio'),
-          ),
-        ),
-        const SizedBox(height: 24.0),
+        const Bio(),
         const GithubStatsWidget(),
-        const SizedBox(height: 24.0),
         const StackOverflowStatsWidget(),
-        const SizedBox(height: 24.0),
-        Container(
-          height: 500,
-          width: 300,
-          color: Colors.blue,
-          child: const Center(
-            child: Text('Technologies and read more (about)'),
-          ),
-        ),
-        const SizedBox(height: 24.0),
-
-      ],
+        const ShortTechnologies(),
+        const Game(),
+      ].withSpacing(
+        48.0,
+        before: true,
+        after: true,
+      ),
     );
   }
 }
